@@ -3,8 +3,9 @@ Welcome to the main guide for exporting your FFXIV character into a 3D model! Th
 # What You'll Need
 - An active FFXIV subscription
 - [TexTools](https://www.ffxiv-textools.net/)
-- An image editor, such as Photoshop or GIMP
-	- Optional is a downloadable screenshot program such as [Gyazo](https://gyazo.com/download), just for taking cropped and convenient screenshots with little to no extra information.
+- (Optional) An in-game appearance editor, such as [Anamnesis](https://github.com/imchillin/Anamnesis).
+- An image editor, such as Photoshop or [GIMP](https://www.gimp.org/downloads/)
+	- (Optional) A downloadable screenshot program such as [Gyazo](https://gyazo.com/download), just for taking cropped and convenient screenshots with little to no extra information.
 - [Blender](https://www.blender.org/)
 	- [Blender Cats plugin](https://github.com/absolute-quantum/cats-blender-plugin)
 - [Unity](https://unity.com/download)
@@ -14,3 +15,37 @@ Welcome to the main guide for exporting your FFXIV character into a 3D model! Th
 I *highly* recommend that you save extremely frequently. Not just normal saves, either; **save a new copy** every time you complete a major step in this process. Especially if this is your first time working with 3D content, you will likely find yourself making mistakes, worst of all towards the beginning. If you don't save often, you will find yourself starting over many times. So keep a folder full of saves of your project at all of its stages. Preferably keep them numbered, but as long as you can tell what step a given save is at, you should be fine. 
 
 In general really, you should keep your project organized. This project requires many different programs with many different file types and save locations. You want it to be as intuitive as possible to find where everything is located. This can take the form of a document with vital information, or a well-laid-out folder that contains everything for your project.
+
+# Step 1: Gather References
+## Step 1a: Character Appearance
+
+First, we need to obtain your character's appearance data. This is all the data pertaining to character creation or the aesthetician. We'll be taking many screenshots here, so it's vital you have a folder ready to store them in.
+
+Repeat this process for each different character you'll make.
+
+1. If your character appearance isn't already saved, locate them from the character selection screen. Right-click their name and select "Save Appearance Data," and save them to a slot.
+2. Create a new character, loading their appearance data.
+3. Go through each category, taking a screenshot of the options and what you've chosen. Title each screenshot with the category and the setting (if applicable).
+	- This includes your race and clan. While your race should be obvious enough, your clan may be relevant later.
+	- You can skip Height. If you care about that, check Step 1b.
+	- If the option has you choose *exactly one* option from several image previews, its setting will be its position in the list, skipping any "none" option. Examples are Face, Hairstyles, etc.
+		- For options where you can choose multiple, screenshot as normal. Examples are Tattoos and Face Paints.
+	- For colour selection options, it is vital that the Previous/Current previews be visible in your screenshots. We will need those exact colour values. Examples are Skin Color, Eye Color, etc.
+	- For options where you pick from a list (most often Type 1, Type 2, etc), its setting will be "None" for the first option, "A" for the second option, "B" for the third option, and so on. Examples are Eye Shape, Nose, Eyebrows, etc.
+		- Voices are beyond this guide's scope.
+4. You can now exit out of character creation.
+
+You should now have a folder of screenshots containing all the character creation info for your character.
+
+## Step 1b: Outfits
+
+Next, we need to gather info for the gear your character will wear.
+
+1. Prepare a text document or other scheme for saving and organizing your outfits.
+2. For each outfit, write down the full details in your document. You'll want to know the equipment name and, if applicable, the dye applied to it.
+	- Empty gear slots can be omitted.
+
+Some notes:
+- Though not necessary, it can be helpful to take reference screenshots here too. If you choose to do so, take them not only of the equipment model, but also the dye colour as shown on the gear icon.
+- These outfits don't have to be ones you've acquired yourself - you can use Anamnesis (as mentioned above) to preview items and dyes you don't have on your character.
+- If your character height is important to you, then while logged in open Anamnesis and move to the appearance tab. On the right, in the Model block, note down the height. Do not use the number in the Customize block - you want a number from 0 to 1.
