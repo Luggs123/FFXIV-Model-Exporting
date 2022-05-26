@@ -29,6 +29,7 @@ Repeat this process for each different character you'll make.
 	- This includes your race and clan. While your race should be obvious enough, your clan may be relevant later.
 	- You can skip Height. If you care about that, check Step 1b.
 	- If the option has you choose *exactly one* option from several image previews, its setting will be its position in the list, skipping any "none" option. Examples are Face, Hairstyles, etc.
+		- If you use a hairstyle that is unlocked in-game using a copy of *Modern Aesthetics*, there is not necessarily an easy way to figure out your setting number.
 		- For options where you can choose multiple, screenshot as normal. Examples are Tattoos and Face Paints.
 	- For colour selection options, it is vital that the Previous/Current previews be visible in your screenshots. We will need those exact colour values. Examples are Skin Color, Eye Color, etc.
 	- For options where you pick from a list (most often Type 1, Type 2, etc), its setting will be "None" for the first option, "A" for the second option, "B" for the third option, and so on. Examples are Eye Shape, Nose, Eyebrows, etc.
@@ -49,3 +50,37 @@ Some notes:
 - Though not necessary, it can be helpful to take reference screenshots here too. If you choose to do so, take them not only of the equipment model, but also the dye colour as shown on the gear icon.
 - These outfits don't have to be ones you've acquired yourself - you can use Anamnesis (as mentioned above) to preview items and dyes you don't have on your character.
 - If your character height is important to you, then while logged in open Anamnesis and move to the appearance tab. On the right, in the Model block, note down the height. Do not use the number in the Customize block - you want a number from 0 to 1.
+
+# Step 2: TexTools
+
+## Step 2a: Preparation
+
+Before we do any of the heavy lifting with TexTools, we want to prime it for what's to come. Specifically, we'll be preparing it for your character, so you will have to repeat this process if you begin working on a different character.
+
+1. In TexTools, go to Options > Customize.
+2. Make note of the Save Directory - this is where your 3D models will appear.
+3. Open your image editor and import your screenshots with colour choices. Grab the hex values for your choices using the dropper tool equivalent, and in TexTools insert those hex values under the Colors & Skins section as appropriate. 
+	- If your character doesn't have highlights, match them with their hair colour.
+	- If your character doesn't have a lip colour, match it to their skin colour.
+4. Hit Close.
+
+## Step 2b: Building Your Character
+
+This process will use TexTools' Full Model Viewer (FMV). Be aware that **mods installed through TexTools will be reflected, but mods installed through Penumbra will not**. If this is an issue for you, install or uninstall those mods as needed. Keep the Item List as "By Category" for this whole process.
+
+### Step 2bi: Face & Hair
+
+1. Go to Character > Face, and choose your Race/Gender option.
+2. Go to the Models tab.
+3. Find your character's face under the "Number" dropdown. 
+	- In most cases, your face number will correspond to the setting scheme laid out in Step 1a. However in some cases (such as Hrothgar Males post-6.1), the faces may appear multiple times. Consult any relevant racial guides if you find this is the case.
+4. Click "Add to FMV."
+5. Next, add the Hair just as you did the Face.
+	- For unlockable hairstyles, you will have to search through the list TexTools provides. As a rule of thumb, default hairstyles begin from 1 and continue in consecutive order, while unlocked hairstyles begin after a large gap.
+	- Similarly, in some cases the association laid out in Step 1a will not function perfectly. Once again, please consult any relevant racial guides if this applies.
+
+### Step 2bii: Racial Features
+
+Depending on your race, you may have to add the following:
+- For Miqo'te, Au Ra, and Hrothgar, add your Tail.
+- For Viera, add your Ears.
