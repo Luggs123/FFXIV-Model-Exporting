@@ -17,6 +17,7 @@ I *highly* recommend that you save extremely frequently. Not just normal saves, 
 In general really, you should keep your project organized. This project requires many different programs with many different file types and save locations. You want it to be as intuitive as possible to find where everything is located. This can take the form of a document with vital information, or a well-laid-out folder that contains everything for your project.
 
 # Step 1: Gather References
+
 ## Step 1a: Character Appearance
 
 First, we need to obtain your character's appearance data. This is all the data pertaining to character creation or the aesthetician. We'll be taking many screenshots here, so it's vital you have a folder ready to store them in.
@@ -76,6 +77,7 @@ This process will use TexTools' Full Model Viewer (FMV), which you can access fr
 1. Go to Character > Face, and choose your Race/Gender option.
 2. Go to the Models tab.
 3. Find your character's face under the "Number" dropdown. 
+	- Yes, the eyes look bizarre. What you're seeing are the eyes for Reaper's *Enshroud* overlaid on top of the normal eyes. If you need to be reassured, the proper eyes can be seen by changing the Mesh dropdown to Mesh #2. Make sure to set it back to "ALL" afterwards.
 	- In most cases, your face number will correspond to the setting scheme laid out in Step 1a. However in some cases (such as Hrothgar Males post-6.1), the faces may appear multiple times. Consult any relevant racial guides if you find this is the case.
 4. Click "Add to FMV."
 5. Next, add the Hair just as you did the Face.
@@ -104,3 +106,45 @@ Depending on your race, you may have to add the following:
 From the FMV, make sure the Skeleton and (if applicable) Face options are properly set on the top bar. Once they are, hit Export at the bottom. Give your export a name, and it will produce all the 3D components of the character you built.
 
 If your character has heterochromia, we will take the opportunity to export that now. Return to the customize menu and replace the iris color with that of the other eye. Once that's saved, you can return to your race's face and add that to the FMV, replacing your previous face. Feel free to delete all other components of the model to better distinguish this from the main model you just exported. Export this new face.
+
+# Step 4: Blender
+
+Blender is where the meat of your work will be done. As such, some brief things to consider:
+
+- I will reiterate my previous advice to save many backups as you progress. Not only will you make the most mistakes in Blender, but they will also be the costliest and most time-consuming without backups. 
+- If you haven't already, make sure to install the Cats plugin. 
+- I may reference the "viewport" - this refers to the part of the Blender window where you can see the model in a 3D environment. Some of Blender's hotkeys will only work if your mouse is inside the viewport.
+- Blender is not where this guide ends, but you may decide down the line that you want to add more major features to your model. Those features will in all likelihood require working more with Blender and getting a more thorough understanding of working with it. It also means that you'll have to repeat the steps taken after leaving Blender if you choose to revisit the project.
+
+Let's begin.
+
+## Step 4a: Initial Actions
+
+1. Open a new Blender project, and choose File > Import > FBX, importing the .fbx file we exported from TexTools.
+2. If you like, press N while the mouse is in the viewport, scroll down to MMD Shading, and choose either Shadeless or GLSL. This will show the model with most textures applied. Your mileage may vary on the quality.
+3. In the top-right, expand the orange group. Contained within are several other groups and an armature titled `n_root`. Delete all the groups (including the group everything is contained in) leaving you only with the Armature. Your model will be laying on its back.
+4. Select the Armature, and go into its Object properties. Set the rotation along the x-axis to 90 degrees. Your model will be standing upright again.
+
+## Step 4b: Bone Structure
+
+We will briefly reconfigure the model's bone hierarchy.
+
+Expand the Armature, and further expand the skeleton (also titled `n_root`). 
+1. Select a bone, then enter Edit Mode.
+2. Delete `n_throw`, `n_hara`, and `j_sebo_a`.
+3. Select `j_sebo_b`, and open the Bone Properties. Set its parent bone to `j_kosi`.
+
+## Step 4c: Deleting Meshes
+
+Next, we will filter out any unwanted meshes. From the top of the list, we will begin with meshes that pertain to equipment.
+
+1. Select each mesh (the orange objects labeled as "Parts") in turn. Press G and move your mouse to move the mesh around and right-click to put it back into place. 
+	- For meshes that either clip or do not contribute to the model's appearance (i.e. are covered entirely by some other mesh), go to the Object Data and check if there is a Shape Key that was exported with the gear that fixes the issue. Do this by sliding the Shape Key's value back and forth from zero to one.
+	- If no Shape Keys solve the issue, delete the mesh.
+2. For the facial meshes, once again use G to determine the role of each mesh. Several of the meshes will correspond to your race's facial features and tattoos. Delete those that do not apply, as well as the Reaper *Enshroud* eye mesh.
+3. Finally, delete the appropriate hair meshes if they clip with your headwear.
+
+## Step 4d: Heterochromia
+
+If your character doesn't have heterochromia/"odd eyes," proceed to the next step.
+
