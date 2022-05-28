@@ -40,7 +40,7 @@ You should now have a folder of screenshots containing all the character creatio
 
 ## Step 1b: Outfits
 
-Next, we need to gather info for the gear your character will wear.
+Next, we need to gather info for the gear your character will wear. Weapons, in both your main- and off-hands, are beyond the scope of this guide.
 
 1. Prepare a text document or other scheme for saving and organizing your outfits.
 2. For each outfit, write down the full details in your document. You'll want to know the equipment name and, if applicable, the dye applied to it.
@@ -53,6 +53,8 @@ Some notes:
 
 # Step 2: TexTools
 
+This step deals with the extraction process. We'll be using TexTools to gather all the 3D assets that pertain to your model.
+
 ## Step 2a: Preparation
 
 Before we do any of the heavy lifting with TexTools, we want to prime it for what's to come. Specifically, we'll be preparing it for your character, so you will have to repeat this process if you begin working on a different character.
@@ -62,11 +64,12 @@ Before we do any of the heavy lifting with TexTools, we want to prime it for wha
 3. Open your image editor and import your screenshots with colour choices. Grab the hex values for your choices using the dropper tool equivalent, and in TexTools insert those hex values under the Colors & Skins section as appropriate. 
 	- If your character doesn't have highlights, match them with their hair colour.
 	- If your character doesn't have a lip colour, match it to their skin colour.
+	- If your character has heterochromia (or "odd eyes," as the game calls them), set the iris color to that of either eye.
 4. Hit Close.
 
 ## Step 2b: Building Your Character
 
-This process will use TexTools' Full Model Viewer (FMV). Be aware that **mods installed through TexTools will be reflected, but mods installed through Penumbra will not**. If this is an issue for you, install or uninstall those mods as needed. Keep the Item List as "By Category" for this whole process.
+This process will use TexTools' Full Model Viewer (FMV), which you can access from TexTools at any time via Tools > Full Model Viewer. Be aware that **mods installed through TexTools will be reflected, but mods installed through Penumbra will not**. If this is an issue for you, install or uninstall those mods as needed. Keep the Item List as "By Category" for this whole process.
 
 ### Step 2bi: Face & Hair
 
@@ -84,3 +87,20 @@ This process will use TexTools' Full Model Viewer (FMV). Be aware that **mods in
 Depending on your race, you may have to add the following:
 - For Miqo'te, Au Ra, and Hrothgar, add your Tail.
 - For Viera, add your Ears.
+
+### Step 3biii: Equipment
+
+1. Locate each piece of equipment in your outfit in TexTools in the Item List. 
+2. Change the race to your own.
+	- Depending on your race, you may find that most gear will not explicitly list your race here - this is because many races share models. In general, Hrothgar share models with Roegadyn; Female Lalafells might use Male Lalafell models; and Elezen, Au Ra, Miqo'te, and Viera will use the Hyur Highlander models of their respective gender.
+3. If the given piece of equipment is dyed, go to Textures and the texture map to ColorSet. If your race does not have a ColorSet texture map, change the race to either Hyur Highlander Male/Female, depending on your character's gender and the item.
+	- Go through each row of the ColorSet (click them manually; the Up/Down arrows are used to switch the positions of two rows) and for each with a Dye Template attached, choose the dye you want to apply from the "Preview Dye #" dropdown on the right, then hit "Copy Dye Values to Row." Hit Save.
+4. Choose Models, and change the race/gender to your own. Press "Add to FMV."
+5. If you modified the ColorSet above, return there and press Disable at the bottom. This will return the equipment to its unmodified state.
+6. Repeat the above steps until you have added all the equipment pieces for your outfit.
+
+## Step 3c: Exporting
+
+From the FMV, make sure the Skeleton and (if applicable) Face options are properly set on the top bar. Once they are, hit Export at the bottom. Give your export a name, and it will produce all the 3D components of the character you built.
+
+If your character has heterochromia, we will take the opportunity to export that now. Return to the customize menu and replace the iris color with that of the other eye. Once that's saved, you can return to your race's face and add that to the FMV, replacing your previous face. Feel free to delete all other components of the model to better distinguish this from the main model you just exported. Export this new face.
