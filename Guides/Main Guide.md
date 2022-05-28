@@ -109,7 +109,7 @@ If your character has heterochromia, we will take the opportunity to export that
 
 # Step 4: Blender
 
-Blender is where the meat of your work will be done. As such, some brief things to consider:
+Blender is where the meat of your work will be done. As such, I've split this section of the guide into many distinct parts to so that you don't get lost or disoriented. Once more, some advisories:
 
 - I will reiterate my previous advice to save many backups as you progress. Not only will you make the most mistakes in Blender, but they will also be the costliest and most time-consuming without backups. 
 - If you haven't already, make sure to install the Cats plugin. 
@@ -148,3 +148,7 @@ Next, we will filter out any unwanted meshes. From the top of the list, we will 
 
 If your character doesn't have heterochromia/"odd eyes," proceed to the next step.
 
+1. Change into Edit Mode and select a point on one of the eyes (preferably the eye with the wrong colour). Hit L to select the surrounding points, then P to separate the selection into its own mesh.
+2. Select the new mesh and enter the Material tab. In the materials dropdown list, press the "2," creating a duplicate material for this new eye.
+3. In the Texture tab, select the Diffuse texture and once again hit the "2" for the texture dropdown.
+4. Scroll down to "Image" and press the "2" for the image dropdown. Then, press the file icon and import the Diffuse texture exported separately in Step 3c.
