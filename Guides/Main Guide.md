@@ -192,3 +192,43 @@ We are now going to prepare shapekeys for lip syncing, also known as Visemes. Pr
 8. Revert the bones back to their neutral positions.
 9. In the Cats plugin menu, expand the Visemes section. Input the three visemes you created in their proper spots, and press Create Visemes.
 10. Still using the Cats plugin menu, scroll to the top and press Export Model.
+11. **Save your project.** You may have to return here to apply a fix for a problem that reveals itself in Unity.
+
+# Step 5: Unity
+
+This section of the guide will be... weird. I have two disclaimers to present before I provide any instructions. 
+The first is that this guide is meant to be multipurpose. That is, this guide is meant to help both those who will use their models for VRChat and those who will use it for VTubing. That being said, the second disclaimer is that I personally made my model VRChat-ready with one guide, then later followed a guide by someone else entirely for making a VRChat model usable for VTubing. The result is that this guide will only include the steps needed for both use cases. I will then produce two more follow-up guides, one for each application. As a result, this guide may end abruptly. In addition, both follow-up guides may not have as high-quality writing as this, as I will have to work out for myself which steps will be cut and which are to be put where.
+
+One last thing: your Unity workspace will also immensely benefit from good organization. Keep that in mind while you import your earlier work and make things like the requisite materials.
+
+1. Create a new Unity project.
+2. Import all of the textures from your TexTools export(s) into your project.
+3. Import your model. If you did everything right, you should receive a pop-up about fixing Normal textures. Click "Fix now."
+4. Drag your model into the scene hierarchy to center it in the middle of the scene.
+	- Depending on your race, your character's head may look twisted. This happened when we deleted the `j_sebo_a` bone in Blender. To fix this, perform the following steps:
+		1. Open your Blender project, and switch into Edit Mode.
+		2. Navigate down the bone hierarchy to the head bone, `j_kao`.
+		3. Change the roll (not position or rotation) for the following bones to 0:
+			- `j_kao`,
+			- `j_ago`,
+			- `j_f_eye_l` and `j_f_eye_r`,
+			- `j_f_hana`,
+			- `j_f_memoto`, and
+			- `j_f_miken_l` and `j_f_miken_r`.
+		4. Re-export the model using the Cats plugin.
+5. In the Project folder, select the model. Enter the Materials tab.
+6. Press Extract Materials, and select the folder you want to extract the materials into. This will populate that folder with the materials and their respective textures from the Blender project in groups of 6 (using the default sort scheme):
+	1. Material
+	2. Diffuse/Albedo Texture
+	3. Emissive Texture
+	4. Normal Texture
+	5. Occlusive Texture (which are unneeded)
+	6. Specular Texture
+	- You will be changing the shaders used by these materials. However, acceptable shaders are application-specific, and thus will be delegated to the follow-up guides.
+7. Select the model in the scene hierarchy. If you care about your specific height, you can change your scale (in all three coordinates) to the value you obtained in step 1b.
+8. With the model selected press the button labeled "Select." In the Model tab, change Normals from Import to Calculate. Hit Apply.
+9. In the Rig tab, change the Animation Type from Generic to Humanoid. Hit Apply, then hit "Configure..." 
+	- Your model should be in a T-Pose. If it's in an A-Pose (arms at a downward angle), you forgot an Armature modifier.
+10. Under Body, click the circle icon on the far right for the Chest option, and set it to `j_sebo_c`. Scroll to the bottom and hit Apply, then Done.
+
+And that should be it for the common steps between VRChat and VTubing! From here, use the appropriate follow-up guides. Good luck!
