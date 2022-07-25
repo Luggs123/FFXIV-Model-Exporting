@@ -152,3 +152,43 @@ If your character doesn't have heterochromia/"odd eyes," proceed to the next ste
 2. Select the new mesh and enter the Material tab. In the materials dropdown list, press the "2," creating a duplicate material for this new eye.
 3. In the Texture tab, select the Diffuse texture and once again hit the "2" for the texture dropdown.
 4. Scroll down to "Image" and press the "2" for the image dropdown. Then, press the file icon and import the Diffuse texture exported separately in Step 3c.
+
+## Step 4e: Merging Meshes and Consolidation
+
+Next, we need to merge the meshes your model needs into one. 
+
+1. While holding Shift, select each of the Parts of your model in the hierarchy. 
+2. Once all of them are selected, and with your mouse in the viewport, press Ctrl+J.
+
+Now, we need to apply a whole bunch of your character creation selections to the model in the form of shapekeys.
+
+3. Go to the Data tab, and scroll down to Shape Keys. In that list, you will find many shapekeys with the naming system of `shp_[part]_x`. "\[Part\]" will usually refer to some aspect of the face, and "x" will be some letter. 
+4. Using the references you took all the way back in Step 1a, go through the shapekeys to find those that apply to your character by setting their value to 1. Set it back to 0 if that shapekey doesn't apply. For each \[part\], you'll only need to enable one "x."
+5. For shapekeys that do apply, select them and click the arrow on the right of the list, then choose "Apply Selected Shapekey to Basis." Delete the rest using the Minus button.
+
+## Step 4f: Making New Shapekeys
+
+Next, we will create new shapekeys for blinking and lip syncing. Once more, an advisory: this process will be difficult to get just right. Don't be surprised if you find yourself coming back here to adjust the shapekeys we make, especially since lip syncing makes for just a vital aesthetic detail for VTuber models (and VRChat models, to a lesser extent). We'll start with blinking, just because that is a good deal simpler, and that should ease you into the process for making these new shapekeys.
+
+Note: For blinking, you may want to repeat the process for each individual eye, especially for VTuber purposes - VTubing software will likely prefer that the eyes be rigged independently from each other. Make sure to name the shapekeys appropriately. If you do, for greatest efficiency do these steps in the following order: set one eye, set the other, revert the first eye, then revert the other.
+
+1. Enter Pose Mode. Adjust the following bones: `j_f_umab_l` and `j_f_umab_r` for the upper eyelids, and `j_f_dmab_l` and `j_f_dmab_r` for the lower eyelids until they're closed using the Z rotation.
+2. Return to Object Mode by selecting the model. Navigate to the Modifiers tab, and hit Apply as Shape Key - this will create a new Shape Key for the pose you just made. 
+3. While still in the Modifiers tab, click Add Modifier, and choose Armature. For Object, choose `n_root`.
+4. In the Data tab, navigate to the newly-created shapekey and rename it to "Blink".
+5. Return to Pose Mode and revert the changes you made to the eyelid bones.
+
+We are now going to prepare shapekeys for lip syncing, also known as Visemes. Precisely which visemes you need to create might depend on the application you'll use for your model. That being said, this guide will have you build three manually, then generate the rest needed for VRChat using the Cats plugin. I make no guarantees to the quality of these generated visemes - as I said above, these are difficult to get right. Worst case, you may prefer to manually make every viseme.
+
+6. Pull up a visual reference for visemes. I do not have any specific recommendation for one to use, but [here's one such reference page for Oculus developers that I found](https://developer.oculus.com/documentation/unity/audio-ovrlipsync-viseme-reference/). 
+7. Create visemes for the following sounds: "ah," "oh," and "ch." After each viseme, remember to hit Apply as Shape Key and create a new Armature Modifier. Rename the new shapekeys appropriately.
+	- Optionally, hide or change the appearance of the bones that control the mouth area to better see the changes as you work.
+	- Bones that control the mouth area include: 
+		- `j_ago` (Lower Jaw),
+		- Bones that begin with `j_f_ulip` or `n_f_ulip` (Upper Lip, depends on race), 
+		- Bones that begin with `j_f_dlip` (Lower Lip) or `n_f_lip` (Oral Commissures, i.e. where the upper and lower lips meet at the sides), depending on the race.
+		- Some of these bones are parents of each other. Expand the bone hierarchy for these bones.
+		- You will adjust both the rotations and positions of these bones.
+8. Revert the bones back to their neutral positions.
+9. In the Cats plugin menu, expand the Visemes section. Input the three visemes you created in their proper spots, and press Create Visemes.
+10. Still using the Cats plugin menu, scroll to the top and press Export Model.
