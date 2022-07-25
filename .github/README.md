@@ -4,4 +4,4 @@ Welcome! This GitHub is meant to provide you the knowledge and tools to export y
 
 Anyone seeking to enlist or provide help is welcome to join the [help discord](https://discord.gg/uWBuqRUURx)!
 
-[Click here for the main guide](/Guides/Main Guide.md).
+[Click here for the main guide](</Guides/Main Guide.md>).
