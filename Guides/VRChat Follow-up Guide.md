@@ -2,8 +2,8 @@ Welcome to the follow-up of the main guide for using your model in VRChat! There
 
 # Resources
 
-- If you didn't before, you need the [VRChat SDK](https://vrchat.com/home/download).
-- As a matter of preference, you may want to use a [Rero Shader](https://github.com/RetroGEO/reroStandard/releases)
+- If you didn't get it before, you need the [VRChat SDK](https://vrchat.com/home/download).
+- As a matter of preference, you may want to use a [Rero Shader](https://github.com/RetroGEO/reroStandard/releases).
 - If you want to go hard in designing your avatar, consider using the [Dynamic Bone script](https://assetstore.unity.com/packages/tools/animation/dynamic-bone-16743).
 
 # Materials
