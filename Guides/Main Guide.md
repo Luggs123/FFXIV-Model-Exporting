@@ -231,4 +231,4 @@ One last thing: your Unity workspace will also immensely benefit from good organ
 	- Your model should be in a T-Pose. If it's in an A-Pose (arms at a downward angle), you forgot an Armature modifier.
 10. Under Body, click the circle icon on the far right for the Chest option, and set it to `j_sebo_c`. Scroll to the bottom and hit Apply, then Done.
 
-And that should be it for the common steps between VRChat and VTubing! From here, use the appropriate follow-up guides. Good luck!
+And that should be it for the common steps between VRChat and VTubing! Depending on what you plan on using, proceed to the [VRChat](</Guides/VRChat Follow-up Guide.md>) or VTubing guides. Good luck!
