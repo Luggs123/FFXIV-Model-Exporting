@@ -222,7 +222,7 @@ One last thing: your Unity workspace will also immensely benefit from good organ
 	2. Diffuse/Albedo Texture
 	3. Emissive Texture
 	4. Normal Texture
-	5. Occlusive Texture (which are unneeded)
+	5. Occlusive Texture (which is unneeded)
 	6. Specular Texture
 	- You will be changing the shaders used by these materials. However, acceptable shaders are application-specific, and thus will be delegated to the follow-up guides.
 7. Select the model in the scene hierarchy. If you care about your specific height, you can change your scale (in all three coordinates) to the value you obtained in step 1b.
