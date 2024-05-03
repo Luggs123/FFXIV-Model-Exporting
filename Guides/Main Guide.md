@@ -3,7 +3,7 @@ Welcome to the main guide for exporting your FFXIV character into a 3D model! Th
 # What You'll Need
 - An active FFXIV subscription
 - [TexTools](https://www.ffxiv-textools.net/)
-- (Optional) An in-game appearance editor, such as [Anamnesis](https://github.com/imchillin/Anamnesis).
+- (Optional) An in-game appearance editor, such as [Anamnesis](https://github.com/imchillin/Anamnesis), or if you use [XIVLauncher](https://goatcorp.github.io/), you can use [Glamourer](https://github.com/Ottermandias/Glamourer).
 - An image editor, such as Photoshop or [GIMP](https://www.gimp.org/downloads/)
 	- (Optional) A downloadable screenshot program such as [Gyazo](https://gyazo.com/download), just for taking cropped and convenient screenshots with little to no extra information.
 - [Blender](https://www.blender.org/)
@@ -30,9 +30,10 @@ Repeat this process for each different character you'll make.
 	- This includes your race and clan. While your race should be obvious enough, your clan may be relevant later.
 	- You can skip Height. If you care about that, check Step 1b.
 	- If the option has you choose *exactly one* option from several image previews, its setting will be its position in the list, skipping any "none" option. Examples are Face, Hairstyles, etc.
-		- If you use a hairstyle that is unlocked in-game using a copy of *Modern Aesthetics*, there is not necessarily an easy way to figure out your setting number.
-		- For options where you can choose multiple, screenshot as normal. Examples are Tattoos and Face Paints.
-	- For colour selection options, it is vital that the Previous/Current previews be visible in your screenshots. We will need those exact colour values. Examples are Skin Color, Eye Color, etc.
+		- For options where you can choose multiple, screenshot as normal. Examples are Tattoos and Facial Features.
+		>[!note]
+		>If you use a hairstyle that is unlocked in-game using a copy of *Modern Aesthetics*, there is not necessarily an easy way to figure out your setting number, and the hairstyle will not be visible in the list.
+	- For colour selection options, it is vital that the Previous/Current previews be visible in your screenshots. We will need those exact colour values. Examples are Skin Color, Eye Color, etc. Thankfully, the character creator/aesthetician now provide exact RGB values for these parameters.
 	- For options where you pick from a list (most often Type 1, Type 2, etc), its setting will be "None" for the first option, "A" for the second option, "B" for the third option, and so on. Examples are Eye Shape, Nose, Eyebrows, etc.
 		- Voices are beyond this guide's scope.
 4. You can now exit out of character creation.
@@ -49,8 +50,8 @@ Next, we need to gather info for the gear your character will wear. Weapons, in 
 
 Some notes:
 - Though not necessary, it can be helpful to take reference screenshots here too. If you choose to do so, take them not only of the equipment model, but also the dye colour as shown on the gear icon.
-- These outfits don't have to be ones you've acquired yourself - you can use Anamnesis (as mentioned above) to preview items and dyes you don't have on your character.
-- If your character height is important to you, then while logged in open Anamnesis and move to the appearance tab. On the right, in the Model block, note down the height. Do not use the number in the Customize block - you want a number from 0 to 1.
+- These outfits don't have to be ones you've acquired yourself - you can use Anamnesis or Glamourer (as mentioned above) to preview items and dyes you don't have on your character.
+- If your character height is important to you, then while logged in open Anamnesis and move to the appearance tab. On the right, in the Model block, note down the height. Do not use the number in the Customize block - you want a number from 0 to 1. This parameter is not shown in Glamourer, though.
 
 # Step 2: TexTools
 
@@ -78,7 +79,7 @@ This process will use TexTools' Full Model Viewer (FMV), which you can access fr
 2. Go to the Models tab.
 3. Find your character's face under the "Number" dropdown. 
 	- Yes, the eyes look bizarre. What you're seeing are the eyes for Reaper's *Enshroud* overlaid on top of the normal eyes. If you need to be reassured, the proper eyes can be seen by changing the Mesh dropdown to Mesh #2. Make sure to set it back to "ALL" afterwards.
-	- In most cases, your face number will correspond to the setting scheme laid out in Step 1a. However in some cases (such as Hrothgar Males post-6.1), the faces may appear multiple times. Consult any relevant racial guides if you find this is the case.
+	- In most cases, your face number will correspond to the setting scheme laid out in Step 1a. However in some cases (such as Male Hrothgar post-6.1), the faces may appear multiple times. Consult any relevant racial guides if you find this is the case.
 4. Click "Add to FMV."
 5. Next, add the Hair just as you did the Face.
 	- For unlockable hairstyles, you will have to search through the list TexTools provides. As a rule of thumb, default hairstyles begin from 1 and continue in consecutive order, while unlocked hairstyles begin after a large gap.
@@ -86,28 +87,32 @@ This process will use TexTools' Full Model Viewer (FMV), which you can access fr
 
 ### Step 2bii: Racial Features
 
+Add your race's body.
+- You won't see the whole body - instead you'll see a couple of spots like the neck, wrist, etc.
 Depending on your race, you may have to add the following:
 - For Miqo'te, Au Ra, and Hrothgar, add your Tail.
 - For Viera, add your Ears.
 
-### Step 3biii: Equipment
+### Step 2biii: Equipment
 
 1. Locate each piece of equipment in your outfit in TexTools in the Item List. 
 2. Change the race to your own.
 	- Depending on your race, you may find that most gear will not explicitly list your race here - this is because many races share models. In general, Hrothgar share models with Roegadyn; Female Lalafells might use Male Lalafell models; and Elezen, Au Ra, Miqo'te, and Viera will use the Hyur Highlander models of their respective gender.
 3. If the given piece of equipment is dyed, go to Textures and the texture map to ColorSet. If your race does not have a ColorSet texture map, change the race to either Hyur Highlander Male/Female, depending on your character's gender and the item.
 	- Go through each row of the ColorSet (click them manually; the Up/Down arrows are used to switch the positions of two rows) and for each with a Dye Template attached, choose the dye you want to apply from the "Preview Dye #" dropdown on the right, then hit "Copy Dye Values to Row." Hit Save.
+		>[!warning]
+		>Do not use the Up/Down Arrow buttons to select rows, those *swap* rows with the above/below!
 4. Choose Models, and change the race/gender to your own. Press "Add to FMV."
 5. If you modified the ColorSet above, return there and press Disable at the bottom. This will return the equipment to its unmodified state.
 6. Repeat the above steps until you have added all the equipment pieces for your outfit.
 
-## Step 3c: Exporting
+## Step 2c: Exporting
 
 From the FMV, make sure the Skeleton and (if applicable) Face options are properly set on the top bar. Once they are, hit Export at the bottom. Give your export a name, and it will produce all the 3D components of the character you built.
 
 If your character has heterochromia, we will take the opportunity to export that now. Return to the customize menu and replace the iris color with that of the other eye. Once that's saved, you can return to your race's face and add that to the FMV, replacing your previous face. Feel free to delete all other components of the model to better distinguish this from the main model you just exported. Export this new face.
 
-# Step 4: Blender
+# Step 3: Blender
 
 Blender is where the meat of your work will be done. As such, I've split this section of the guide into many distinct parts to so that you don't get lost or disoriented. Once more, some advisories:
 
@@ -118,14 +123,14 @@ Blender is where the meat of your work will be done. As such, I've split this se
 
 Let's begin.
 
-## Step 4a: Initial Actions
+## Step 3a: Initial Actions
 
 1. Open a new Blender project, and choose File > Import > FBX, importing the .fbx file we exported from TexTools.
 2. If you like, press N while the mouse is in the viewport, scroll down to MMD Shading, and choose either Shadeless or GLSL. This will show the model with most textures applied. Your mileage may vary on the quality.
 3. In the top-right, expand the orange group. Contained within are several other groups and an armature titled `n_root`. Delete all the groups (including the group everything is contained in) leaving you only with the Armature. Your model will be laying on its back.
 4. Select the Armature, and go into its Object properties. Set the rotation along the x-axis to 90 degrees. Your model will be standing upright again.
 
-## Step 4b: Bone Structure
+## Step 3b: Bone Structure
 
 We will briefly reconfigure the model's bone hierarchy.
 
@@ -134,7 +139,7 @@ Expand the Armature, and further expand the skeleton (also titled `n_root`).
 2. Delete `n_throw`, `n_hara`, and `j_sebo_a`.
 3. Select `j_sebo_b`, and open the Bone Properties. Set its parent bone to `j_kosi`.
 
-## Step 4c: Deleting Meshes
+## Step 3c: Deleting Meshes
 
 Next, we will filter out any unwanted meshes. From the top of the list, we will begin with meshes that pertain to equipment.
 
@@ -144,7 +149,7 @@ Next, we will filter out any unwanted meshes. From the top of the list, we will 
 2. For the facial meshes, once again use G to determine the role of each mesh. Several of the meshes will correspond to your race's facial features and tattoos. Delete those that do not apply, as well as the Reaper *Enshroud* eye mesh.
 3. Finally, delete the appropriate hair meshes if they clip with your headwear.
 
-## Step 4d: Heterochromia
+## Step 3d: Heterochromia
 
 If your character doesn't have heterochromia/"odd eyes," proceed to the next step.
 
@@ -153,7 +158,7 @@ If your character doesn't have heterochromia/"odd eyes," proceed to the next ste
 3. In the Texture tab, select the Diffuse texture and once again hit the "2" for the texture dropdown.
 4. Scroll down to "Image" and press the "2" for the image dropdown. Then, press the file icon and import the Diffuse texture exported separately in Step 3c.
 
-## Step 4e: Merging Meshes and Consolidation
+## Step 3e: Merging Meshes and Consolidation
 
 Next, we need to merge the meshes your model needs into one. 
 
@@ -166,7 +171,7 @@ Now, we need to apply a whole bunch of your character creation selections to the
 4. Using the references you took all the way back in Step 1a, go through the shapekeys to find those that apply to your character by setting their value to 1. Set it back to 0 if that shapekey doesn't apply. For each \[part\], you'll only need to enable one "x."
 5. For shapekeys that do apply, select them and click the arrow on the right of the list, then choose "Apply Selected Shapekey to Basis." Delete the rest using the Minus button.
 
-## Step 4f: Making New Shapekeys
+## Step 3f: Making New Shapekeys
 
 Next, we will create new shapekeys for blinking and lip syncing. Once more, an advisory: this process will be difficult to get just right. Don't be surprised if you find yourself coming back here to adjust the shapekeys we make, especially since lip syncing makes for just a vital aesthetic detail for VTuber models (and VRChat models, to a lesser extent). We'll start with blinking, just because that is a good deal simpler, and that should ease you into the process for making these new shapekeys.
 
@@ -194,7 +199,7 @@ We are now going to prepare shapekeys for lip syncing, also known as Visemes. Pr
 10. Still using the Cats plugin menu, scroll to the top and press Export Model.
 11. **Save your project.** You may have to return here to apply a fix for a problem that reveals itself in Unity.
 
-# Step 5: Unity
+# Step 4: Unity
 
 This section of the guide will be... weird. I have two disclaimers to present before I provide any instructions. 
 The first is that this guide is meant to be multipurpose. That is, this guide is meant to help both those who will use their models for VRChat and those who will use it for VTubing. That being said, the second disclaimer is that I personally made my model VRChat-ready with one guide, then later followed a guide by someone else entirely for making a VRChat model usable for VTubing. The result is that this guide will only include the steps needed for both use cases. I will then produce two more follow-up guides, one for each application. As a result, this guide may end abruptly. In addition, both follow-up guides may not have as high-quality writing as this, as I will have to work out for myself which steps will be cut and which are to be put where.
@@ -222,7 +227,7 @@ One last thing: your Unity workspace will also immensely benefit from good organ
 	2. Diffuse/Albedo Texture
 	3. Emissive Texture
 	4. Normal Texture
-	5. Occlusive Texture (which are unneeded)
+	5. Occlusive Texture (which is unneeded)
 	6. Specular Texture
 	- You will be changing the shaders used by these materials. However, acceptable shaders are application-specific, and thus will be delegated to the follow-up guides.
 7. Select the model in the scene hierarchy. If you care about your specific height, you can change your scale (in all three coordinates) to the value you obtained in step 1b.
@@ -231,4 +236,4 @@ One last thing: your Unity workspace will also immensely benefit from good organ
 	- Your model should be in a T-Pose. If it's in an A-Pose (arms at a downward angle), you forgot an Armature modifier.
 10. Under Body, click the circle icon on the far right for the Chest option, and set it to `j_sebo_c`. Scroll to the bottom and hit Apply, then Done.
 
-And that should be it for the common steps between VRChat and VTubing! From here, use the appropriate follow-up guides. Good luck!
+And that should be it for the common steps between VRChat and VTubing! Depending on what you plan on using, proceed to the [VRChat](</Guides/VRChat Follow-up Guide.md>) or VTubing guides. Good luck!
