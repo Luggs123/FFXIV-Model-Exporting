@@ -13,7 +13,7 @@ Secondly, **save**. Often. 3D software is very... shall we say, sensitive. There
 Third, not everyone's needs are the same. By extension, not everyone will need to follow the same advice. To that end, I will be making use of GitHub's "Alerts" to point out when some users will have to follow different instructions than others. The people intended to read the Alert will be noted at the beginning. Here is one for modders, both as a form of advice, and to know what to look out for.
 
 > [!WARNING]
-> **For modders:** This process is ostensibly mod-compatible. That is, mods that affect your character's or their gear's appearance should function properly with this guide. However, I can't guarantee compatibility for non-standard skeletons or other kinds of mods.
+> **For modders:** This process is ostensibly mod-compatible. That is, mods that affect your character's or their gear's appearance should function properly with this guide. However, I can't guarantee compatibility for non-standard skeletons or other kinds of mods. I can guarantee that VFX mods will not be reflected. Though Meddle does have support for capturing animations, this will not be covered by this guide.
 
 # What You'll Need
 
@@ -48,7 +48,12 @@ Search the plugin installer for Meddle, click it, and install it.
 
 # Step 2: Meddle
 
-Enter the command `/meddle` into chat to open the Meddle interface. Under `Select Character`, make sure the desired character is chosen. Your character will almost certainly be chosen by default.
+Have the desired character achieve their desired appearance.
+
+> [!NOTE]
+> **For modders:** You don't need to do anything special here. If you go onto a modded outfit or modded body, they should still be reflected in the export. As warned earlier though, be ready to anticipate that there may be issues with certain kinds of mods.
+
+Enter the command `/meddle` into chat to open the Meddle interface. Under `Select Character`, make sure the desired character is chosen. Characters will likely be ordered by distance to the player character, and therefore the player character should always be first on the list for convenience.
 
 For the first section, `Character`, click `Export All Models with Attaches`. Use the default settings, but make sure most of all that `Pose Mode` is set to `Reference Pose with Scale`. Once you hit Export, it'll prompt you to choose the path you save it in (and by default will open that folder afterwards). What matters is you copy the export after the fact to your dedicated directory after this.
 
