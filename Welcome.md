@@ -13,4 +13,4 @@ It is also for that reason that one of the objectives of this guide is to be as 
 
 Anyone seeking to enlist or provide help is welcome to join the [help discord](https://discord.gg/uWBuqRUURx)!
 
-Your journey will begin by [[FFXIV to Blender|bringing your Warrior of Light to Blender]].
+Your journey will begin by [bringing your Warrior of Light to Blender](<FFXIV to Blender>).
